@@ -5,7 +5,7 @@
 ```sql
 SELECT *
 FROM `students`
-WHERE YEAR(`date_of_birth`) = "1990";
+WHERE YEAR(`date_of_birth`) = 1990;
 ```
 
 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
@@ -21,7 +21,7 @@ WHERE `cfu` > 10;
 ```sql
 SELECT *
 FROM `students`
-WHERE DATE(`date_of_birth`) < "1994-03-11";
+WHERE DATE(`date_of_birth`) < DATE_SUB(CURRENT_DATE(),INTERVAL 30 YEAR);
 ```
 
 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
@@ -39,7 +39,7 @@ WHERE `period` = "I semestre" AND `year` = 1;
 ```sql
 SELECT *
 FROM `exams`
-WHERE `date` = "2020-06-20" AND HOUR(`hour`) >= "14";
+WHERE `date` = "2020-06-20" AND HOUR(`hour`) >= 14;
 ```
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
